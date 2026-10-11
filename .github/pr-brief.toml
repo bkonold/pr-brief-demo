@@ -1,0 +1,26 @@
+# Settings for pr-brief (https://github.com/bkonold/pr-brief). Paths are relative to the repository root.
+
+# The OpenAPI document, compared between the base and head commits when a pull request changes it.
+openapi_path = "api/openapi.json"
+
+# A new or changed migration is scanned for destructive SQL, and the Data section lists the tables it touches.
+migration_dirs = ["api/src/main/resources/db/migration/"]
+migration_globs = ["api/src/main/resources/db/migration/*.sql"]
+
+# The generated TypeScript client: contract rows trace to its exports by name, and web code imports it by relative path.
+sdk_dir = "web/sdk/"
+sdk_specifier = "@shelf/sdk"
+
+# Directory markers that make a file a test, besides the built-in "/src/test/", ".test." and "Test.java".
+test_dirs = ["/src/integrationTest/"]
+
+# Searched for callers only when a variant asks for code-only callers.
+callers_exclude_globs = ["**/*.md", "web/sdk/**"]
+
+[[reach.app]]
+name = "api"
+globs = ["api/**"]
+
+[[reach.app]]
+name = "web"
+globs = ["web/**"]
