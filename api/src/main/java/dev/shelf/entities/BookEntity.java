@@ -27,9 +27,6 @@ public class BookEntity {
   @Column(nullable = false)
   private boolean available = true;
 
-  @Column
-  private String notes;
-
   protected BookEntity() {}
 
   public BookEntity(String title, String author, String isbn) {
@@ -60,13 +57,5 @@ public class BookEntity {
 
   public void setAvailable(boolean available) {
     this.available = available;
-  }
-
-  public String getNotes() {
-    return notes;
-  }
-
-  public void setNotes(String notes) {
-    this.notes = notes;
   }
 }
