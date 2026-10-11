@@ -36,6 +36,9 @@ public class LoanEntity {
   @Column(name = "returned_at")
   private Instant returnedAt;
 
+  @Column(name = "fulfilled_hold_id")
+  private Long fulfilledHoldId;
+
   protected LoanEntity() {}
 
   public LoanEntity(BookEntity book, PatronEntity patron, Instant checkedOutAt, Instant dueAt) {
@@ -67,6 +70,14 @@ public class LoanEntity {
 
   public Instant getReturnedAt() {
     return returnedAt;
+  }
+
+  public Long getFulfilledHoldId() {
+    return fulfilledHoldId;
+  }
+
+  public void setFulfilledHoldId(Long fulfilledHoldId) {
+    this.fulfilledHoldId = fulfilledHoldId;
   }
 
   public boolean isOpen() {
